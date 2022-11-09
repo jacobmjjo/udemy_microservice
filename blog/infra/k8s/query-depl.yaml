@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: query-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: query
+  template:
+    metadata:
+        labels: 
+          app: query
+    spec:
+      containers:
+        - name: query
+          image: jacobmjjo/query
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  name: query-srv
+spec:
+  ports:
+  - name: query
+    port: 4002
+    protocol: TCP
+    targetPort: 4002
+  selector:
+    app: query
+  type: ClusterIP
