@@ -1,0 +1,21 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+deploy: 
+  kubectl:
+    manifests:
+      - ./infra/k8s/*
+build:
+  #local:
+  #  push: false
+  googleCloudBuild:
+    projectId: uplifted-crow-372201
+  artifacts:
+    - image: asia.gcr.io/uplifted-crow-372201/auth
+      context: auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: 'src/**/*.ts'
+
