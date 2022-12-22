@@ -18,4 +18,5 @@ build:
         manual:
           - dest: .
             src: 'src/**/*.ts'
+    
 
