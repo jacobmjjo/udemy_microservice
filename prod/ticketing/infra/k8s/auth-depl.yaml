@@ -20,9 +20,12 @@ spec:
       containers:
       - image: asia.gcr.io/uplifted-crow-372201/auth
         name: auth
-        resources: {}
-status: {}
-
+        env:
+          - name: JWT_KEY
+            valueFrom:
+              secretKeyRef:
+                name: jwt-secret
+                key: JWT_KEY
 ---
 
 apiVersion: v1
