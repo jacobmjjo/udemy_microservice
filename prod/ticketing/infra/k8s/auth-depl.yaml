@@ -18,7 +18,8 @@ spec:
         app: auth
     spec:
       containers:
-      - image: asia.gcr.io/uplifted-crow-372201/auth
+      #- image: asia.gcr.io/uplifted-crow-372201/auth
+      - image: jacobmjjo/auth  
         name: auth
         env:
           - name: JWT_KEY
