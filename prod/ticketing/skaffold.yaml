@@ -5,12 +5,13 @@ deploy:
     manifests:
       - ./infra/k8s/*
 build:
-  #local:
-  #  push: false
-  googleCloudBuild:
-    projectId: uplifted-crow-372201
+  local:
+    push: false
+  #googleCloudBuild:
+  #  projectId: uplifted-crow-372201
   artifacts:
-    - image: asia.gcr.io/uplifted-crow-372201/auth
+    #- image: asia.gcr.io/uplifted-crow-372201/auth
+    - image: jacobmjjo/auth
       context: auth
       docker:
         dockerfile: Dockerfile
