@@ -1,6 +1,8 @@
 import mongoose from 'mongoose'
 import { Password } from '../services/password';
 
+mongoose.set('strictQuery', false);
+
 // An interface that describes the properties
 // that are requried to create a new User
 interface UserAttrs{
