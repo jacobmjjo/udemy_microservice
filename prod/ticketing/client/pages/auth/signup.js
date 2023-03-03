@@ -17,7 +17,7 @@ const SignUp =  () => {
   const onSubmit = async (event) => {
     event.preventDefault();
 
-    Router.push('/');
+    await Router.push('/');
 
     doRequest();
   };

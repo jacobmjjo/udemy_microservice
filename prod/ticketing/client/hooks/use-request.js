@@ -16,7 +16,7 @@ export default ({ url, method, body }) => {
       </ul>
     </div>
     );
-
+    throw err;
     }
   };
   return { doRequest, errors}
