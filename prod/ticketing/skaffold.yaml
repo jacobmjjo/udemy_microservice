@@ -19,7 +19,7 @@ build:
         manual:
           - dest: .
             src: 'src/**/*.ts'
-    - image: jacobmjjo/auth
+    - image: jacobmjjo/client
       context: client
       docker:
         dockerfile: Dockerfile
@@ -28,4 +28,3 @@ build:
           - dest: .
             src: '**/*.js'
     
-
