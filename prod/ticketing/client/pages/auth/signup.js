@@ -10,9 +10,9 @@ const SignUp =  () => {
     method: 'post',
     body: {
       email,password
-    }
-
-  })
+    },
+    onSuccess: () => Router.push('/')
+  });
   
   const onSubmit = async (event) => {
     event.preventDefault();
